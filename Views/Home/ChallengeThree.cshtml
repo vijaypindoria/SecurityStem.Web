@@ -3,4 +3,122 @@
 *@
 @{
 }
-<p>Welcome to Challenge 3</p>
+<h2>How to Exchange a secret key over the internet</h2>
+
+<p>The animation below shows how we can exchange a secret key which we can later use to encrypt messages to the receiver.</p>
+
+<head>
+    <style>
+        #train {
+            position: absolute;
+            cursor: pointer;
+            left:300px;
+            
+        }
+
+        #finalMessage{
+            position:absolute;      
+            top: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img id="train" src="~/Images/EmptyBriefcase.jpg" width="200px" height="200px">
+    </div>
+    <div id="finalMessage" font-size="15px">
+        
+    </div>
+
+    <script>
+
+        var click = 0;
+        var step = 1;
+        var xLeftPosition = document.getElementById("train").style.left;
+
+        function leftToRight(clickVal){
+
+            var x = document.getElementById("train").offsetLeft
+
+            let timer = setInterval(function () {
+               
+                if(x<700){
+                    x=x+step;
+                    document.getElementById("train").style.left = x + 'px'
+                }
+                
+
+            }, 20);
+        }
+
+        function rightToLeft(clickVal){
+            var step = 1;
+            
+            var x = document.getElementById("train").offsetLeft;
+
+            let timer = setInterval(function () {
+
+                if (x > 300) {
+                    x = x - step;
+                    document.getElementById("train").style.left = x + 'px'
+                }
+
+
+            }, 20);
+        }
+
+        train.onclick = function () {
+
+            
+
+            switch(click){
+
+                case 0:
+                    document.getElementById("train").src = "/Images/OrangeLock.jpg";
+                    leftToRight(click);
+                    click=1;
+
+                break;
+
+                case 1:
+                    document.getElementById("train").src = "/Images/OrangeAndGreenLock.jpg";
+                    rightToLeft(click);
+                    click=2;
+                    break;
+
+                case 2:
+                    document.getElementById("train").src = "/Images/OrangeLockOpen.jpg";
+                    leftToRight(click);
+                    click = 3;
+                    break;
+
+                case 3: 
+                    document.getElementById("train").src = "/Images/BothLocksOpen.jpg";
+                    setTimeout(function () {
+                        document.getElementById("train").src = "/Images/SecretKey.jpg";
+
+                        document.getElementById("finalMessage").innerHTML = "Now that we have exchanged our key with the receiver, we can now choose an <b>Encryption</b> algorithm and send <b>secure</b> messages to each other";
+                    }, 3000);
+                    click = 4;
+                    break;
+
+                    
+                    
+
+                default:
+                    //document.getElementById('hello').innerText = "Hello";
+                    location.reload();
+            }
+
+
+
+            
+
+
+            
+        }
+    </script>
+
+
+</body>
