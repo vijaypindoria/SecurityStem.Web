@@ -35,7 +35,7 @@ namespace SecurityStem.Web.Controllers
                 if (_loginViewModel.LogIn.ToUpper() == "TESTUSER")
                 {
 
-                    if (_loginViewModel.Password.ToUpper() == "PASSWORD1")
+                    if (_loginViewModel.Password.ToUpper() == "MONKEY")
                     {
                         _loginViewModel.Challenge = 1;
 

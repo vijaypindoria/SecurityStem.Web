@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col col-md-3" >
             <div class="card" id="img1" style="width: 20rem">
-                <img class="card-img-top" src="~/Images/Spam.jpg" alt="Card image cap" onclick="enlargeImg('img1')">
+                <img class="card-img-top" src="~/Images/RealSpam.jpg" alt="Card image cap" onclick="enlargeImg('img1')">
               <div class="card-body">
                 <h5 class="card-title">Email 1</h5>
                 <p class="card-text">This is an example email we may recieve on a given day.</p>
@@ -47,16 +47,16 @@
     <div class="row">
         <div class="col col-md-3">
             <div class="card" id="img2" style="width: 20rem">
-                <img class="card-img-top" src="~/Images/Spam.jpg" alt="Card image cap" onclick="enlargeImg('img2')">
+                <img class="card-img-top" src="~/Images/NotSpam.jpg" alt="Card image cap" onclick="enlargeImg('img2')">
                 <div class="card-body">
-                    <h5 class="card-title">Email 1</h5>
+                    <h5 class="card-title">Email 2</h5>
                     <p class="card-text">This is an example email we may recieve on a given day.</p>
                     <p class="card-text">IS THIS SPAM?</p>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#isSpamDialog">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tryAgainDialog">
                         This is Spam
                     </button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#tryAgainDialog">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#isNotSpamDialog">
                         THIS IS NOT SPAM!
                     </button>
 
