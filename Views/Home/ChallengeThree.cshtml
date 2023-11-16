@@ -89,30 +89,32 @@
             switch(click){
 
                 case 0:
-                    document.getElementById("train").src = "/Images/OrangeLock.jpg";
+                    document.getElementById("train").src = "/Images/RedLockBriefcase.jpg";
+                    document.getElementById("train").style.height = "200px";
+                    document.getElementById("train").style.width = "200px";
                     leftToRight(click);
                     click=1;
 
                 break;
 
                 case 1:
-                    document.getElementById("train").src = "/Images/OrangeAndGreenLock.jpg";
+                    document.getElementById("train").src = "/Images/RedAndGreenPadlockInCase.jpg";
                     rightToLeft(click);
                     click=2;
                     break;
 
                 case 2:
-                    document.getElementById("train").src = "/Images/OrangeLockOpen.jpg";
+                    document.getElementById("train").src = "/Images/RedOpenGreenClosed.jpg";
                     leftToRight(click);
                     click = 3;
                     break;
 
                 case 3: 
-                    document.getElementById("train").src = "/Images/BothLocksOpen.jpg";
+                    document.getElementById("train").src = "/Images/RedOpenGreenOpen.jpg";
                     setTimeout(function () {
                         document.getElementById("train").src = "/Images/SecretKey.jpg";
 
-                        document.getElementById("finalMessage").innerHTML = "Now that we have exchanged our key with the receiver, we can now choose an <b>Encryption</b> algorithm and send <b>secure</b> messages to each other";
+                        document.getElementById("finalMessage").innerHTML = "Now that we have exchanged our public keys with each other, we can now choose an <b>Encryption</b> algorithm after generating a shared secret and send <b>secure</b> messages to each other";
                         
                     }, 3000);
                     click = 4;
